@@ -3,7 +3,7 @@
 - name: GATHER INFORMATION FROM SWITCHES
   hosts: arista215
   connection: network_cli
-  gather_facts: no
+  gather_facts: yes
 
   tasks:
     - name: DISPLAY EXTRA VARIABLE
