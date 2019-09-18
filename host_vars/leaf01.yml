@@ -7,12 +7,12 @@ interfaces:
     shutdown: False
   - name: Ethernet1
     description: P2P Link to Spine01
-    ipv4: 172.16.0.2/30
+    ipv4: 172.16.0.1/31
     shutdown: False
     switchport: False
   - name: Ethernet2
     description: P2P Link to Spine02
-    ipv4: 172.17.0.2/30
+    ipv4: 172.17.0.1/31
     shutdown: False
     switchport: False
   - name: Ethernet10
@@ -94,14 +94,14 @@ bgp:
     - 10.12.34.1/32
   redistribute: connected
   neighbors:
-    - ipv4: 172.16.0.1
+    - ipv4: 172.16.0.0
       remoteas: 65000
       maxroutes: 12000
       prefixlist:
         - name: to-spines
           type: prefixlist
           direction: out
-    - ipv4: 172.17.0.1
+    - ipv4: 172.17.0.0
       remoteas: 65000
       maxroutes: 12000
       prefixlist:
