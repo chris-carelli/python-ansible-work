@@ -5,27 +5,26 @@ interfaces:
     description: router-id
     ipv4: 192.168.0.1/32
     shutdown: False
-  - name: Ethernet1
+  - name: Ethernet5
     description: P2P Link to Leaf-1
-    ipv4: 172.16.0.1/30
+    ipv4: 172.16.0.0/31
     shutdown: False
     switchport: False
-  - name: Ethernet2
+  - name: Ethernet6
     description: P2P Link to Leaf-2
-    ipv4: 172.16.0.5/30
+    ipv4: 172.16.0.2/31
     shutdown: False
     switchport: False
   - name: Ethernet3
-    description: P2P Link to Leaf-3
-    ipv4: 172.16.0.9/30
+    description: P2P Link to f5-1
+    ipv4: 172.16.0.4/30
     shutdown: False
     switchport: False
   - name: Ethernet4
-    description: P2P Link to Leaf-3
-    ipv4: 172.16.0.13/30
+    description: P2P Link to f5-2
+    ipv4: 172.16.0.6/30
     shutdown: False
     switchport: False
-
 bgp:
   asn: 65000
   routerid: 192.168.0.1
@@ -34,15 +33,11 @@ bgp:
   networks: 
     - 192.168.0.1/32
   neighbors:
-    - ipv4: 172.16.0.2
+    - ipv4: 172.16.0.1
       remoteas: 65001
       maxroutes: 12000
-    - ipv4: 172.16.0.6
+    - ipv4: 172.16.0.3
       remoteas: 65001
-    - ipv4: 172.16.0.10
-      remoteas: 65002
       maxroutes: 12000
-    - ipv4: 172.16.0.14
-      remoteas: 65003
-      maxroutes: 12000
+
 
