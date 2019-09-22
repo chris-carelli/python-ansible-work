@@ -1,6 +1,6 @@
 ---
 - name: GENERATE INTERFACE REPORT
-  hosts: arista215
+  hosts: eos215
   gather_facts: no
   connection: network_cli
 
